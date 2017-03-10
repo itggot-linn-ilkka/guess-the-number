@@ -1,24 +1,27 @@
 running = true
-easy = rand 1..10
-medel = rand 1..50
-hard = rand 1..100
+i = 0
 puts "Welcome to guess the secret number"
+sleep 0.5
+puts "select difficult"
 
-puts "select difficult [easy, medel, hard]"
+difficult = gets.to_i
+secret_number=rand 1..difficult
+
+  puts "guess the secret number between 1..difficut"
 
 while running
-  input = gets.chomp
-  p input
-    if input == "easy"
-      puts "guess the secret number between 1..10"
-      secret = easy
-  elsif input == "medel"
-      puts "guess the secret number between 1..50"
-      secret = medel
-  elsif input == "hard"
-      puts "guess the secret number between 1..100"
-      secret = hard
-    end
-    if input == secret
-  end 
+  number = gets.to_i
+  i + 1
+  if number==secret_number
+  puts "good job"
+  break
+elsif number > secret_number
+  puts "try again"
+  sleep 0.5
+  puts "guess a smaller number"
+elsif number < secret_number
+  puts "try again"
+  sleep 0.5
+  puts "guess a bigger number"
+  end
 end
